@@ -10,5 +10,10 @@ module.exports.findOne = async (req, res) => {
     res.send(await findOne(req.params.id));
 }
 module.exports.getCollection = async (req, res) => {
-    res.send(await getCollection());
+    const rawData = await getCollection();
+    res.send(rawData.map((f) => ({
+        idfaction: f.id,
+        name: f.namefaction,
+        race: f.race,
+      })));
 }
