@@ -123,6 +123,17 @@ To apply the changes that have not yet been synced to the database :
 npm run migrate-db
 ```
 
+To rollback the last migration : 
+```
+npm run rollback-last-db-migration
+```
+
+## Applying migrations to local databases using Docker
+
+If you want to manually run migrations while running the app with docker, you can do :
+```sh 
+docker exec server npm run migrate-db
+
 # API Docs
 You can access the docs, available by default at [localhost:5000/api-docs](http://localhost:5000/api-docs).
 

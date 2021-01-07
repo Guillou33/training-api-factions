@@ -1,4 +1,4 @@
-const { create } = require('../models/faction.js');
+const { create, findOne, getCollection } = require('../models/faction.js');
 
 module.exports.handlePost = async (req, res) => {
     const { namefaction, race } = req.body;
@@ -6,3 +6,9 @@ module.exports.handlePost = async (req, res) => {
     return res.status(201).send(data);
   };
 
+module.exports.findOne = async (req, res) => {
+    res.send(await findOne(req.params.id));
+}
+module.exports.getCollection = async (req, res) => {
+    res.send(await getCollection());
+}

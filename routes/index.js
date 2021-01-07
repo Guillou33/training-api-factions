@@ -1,6 +1,6 @@
-import factionsRoutes from './factions';
+const factionsRoutes = require('./factions');
 
 // eslint-disable-next-line
-export default (app) => {
+module.exports = (app) => {
   app.use('/factions', factionsRoutes);
 };
